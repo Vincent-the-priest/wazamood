@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>@wazamood | Work Smart. Think Global. Build the Future.</title>
+<meta name="description" content="@wazamood is a writer, software engineering student, and technology enthusiast exploring ICT innovation, software development, and technology strategy.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{--bg:#05080f;--navy:#0a1224;--panel:rgba(14,24,44,.62);--line:rgba(120,180,255,.16);--cyan:#22e4f0;--teal:#14b8a6;--violet:#7c6cff;--text:#e6edf7;--muted:#9aaac2;--head:'Sora',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));height:auto}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 system-ui,-apple-system,'Segoe UI',sans-serif;overflow-x:hidden;
+background-image:linear-gradient(180deg,#0a1a3a 0%,#06101f 35%,#030710 70%,#000 100%);background-attachment:fixed}
+body.lock{overflow:hidden}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+section{padding:5.5rem 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+svg.i{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.35rem;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--line);cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;background:transparent;color:var(--text);font-family:inherit}
+.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
+.btn.pri{background:linear-gradient(135deg,var(--cyan),var(--teal));color:#021018;border-color:transparent;box-shadow:0 0 28px rgba(34,228,240,.28)}
+.btn.sm{padding:.5rem 1rem;font-size:.85rem}
+.sub{color:var(--muted);max-width:42rem}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.head{margin-bottom:2.5rem;display:grid;gap:.9rem}
+/* nav */
+header.nav{position:fixed;inset:0 0 auto 0;z-index:40;padding-top:env(safe-area-inset-top,0px);background:rgba(5,8,15,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--head);font-weight:700;font-size:1.15rem;display:flex;align-items:center;gap:.6rem}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;border:1px solid var(--cyan);color:var(--cyan);font-size:.95rem;box-shadow:0 0 16px rgba(34,228,240,.25)}
+.links{display:none;gap:1.6rem;align-items:center}
+.links a.l{color:var(--muted);font-size:.93rem;transition:color .2s}
+.links a.l:hover{color:var(--cyan)}
+.burger{background:none;border:1px solid var(--line);color:var(--text);width:42px;height:42px;border-radius:10px;display:grid;place-items:center;cursor:pointer}
+.mobile{display:none;position:absolute;top:100%;left:0;right:0;padding:1rem 1.25rem 1.5rem;background:rgba(5,8,15,.96);border-bottom:1px solid var(--line);flex-direction:column;gap:.25rem}
+.mobile.open{display:flex}
+.mobile a.l{padding:.8rem .5rem;border-bottom:1px solid var(--line);color:var(--text)}
+.mobile .btn{margin-top:1rem;justify-content:center}
+@media(min-width:820px){.links{display:flex}.burger{display:none}.mobile,.mobile.open{display:none}}
+/* hero */
+.hero{padding-top:8.5rem;min-height:100svh;display:flex;align-items:center}
+.hero .wrap{display:grid;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem)}
+.hero h1 span{display:block}
+.hero h1 .g{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:34rem;margin:1.4rem 0 2rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.9rem}
+@media(min-width:960px){.hero .wrap{grid-template-columns:1.05fr .95fr}}
+.term{font-family:var(--mono);font-size:.82rem;line-height:1.8;box-shadow:0 30px 80px -20px rgba(34,228,240,.22),0 0 0 1px var(--line);animation:float 7s ease-in-out infinite;max-width:100%}
+.term .bar{display:flex;gap:.45rem;align-items:center;padding:.75rem 1rem;border-bottom:1px solid var(--line);color:var(--muted)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#2a3a5a}
+.term .bar em{margin-left:.6rem;font-style:normal}
+.term pre{margin:0;padding:1.1rem 1.2rem 1.4rem;min-height:15.5rem;white-space:pre-wrap;word-break:break-word;color:#bcd0ea}
+.k{color:var(--violet)}.s{color:var(--cyan)}.c{color:#5f7595}
+.cur{display:inline-block;width:.55em;height:1.1em;background:var(--cyan);vertical-align:-.2em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@keyframes float{50%{transform:translateY(-10px)}}
+/* about */
+.about{display:grid;gap:2rem}
+.mission{padding:1.8rem;border-left:3px solid var(--cyan);border-radius:4px 18px 18px 4px}
+.mission p{margin:.4rem 0 0;font-size:1.05rem}
+.cards3{display:grid;gap:1.2rem;margin-top:2rem}
+.card{padding:1.6rem;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(34,228,240,.5);box-shadow:0 0 36px rgba(34,228,240,.1)}
+.ico{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;color:var(--cyan);background:linear-gradient(135deg,rgba(34,228,240,.16),rgba(124,108,255,.16));margin-bottom:1rem;font-size:1.3rem}
+.card h3{font-size:1.15rem;margin-bottom:.5rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+@media(min-width:900px){.about{grid-template-columns:1.2fr 1fr;align-items:start}.cards3{grid-template-columns:repeat(3,1fr)}}
+/* blog */
+.tools{display:grid;gap:1rem;margin-bottom:1.8rem}
+.search{position:relative}
+.search svg{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--muted)}
+input[type=search],input[type=email]{width:100%;background:rgba(10,18,36,.8);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:.85rem 1rem;font:inherit}
+input[type=search]{padding-left:2.8rem}
+input::placeholder{color:#6f819d}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:.5rem 1rem;cursor:pointer;font:inherit;font-size:.88rem;transition:.2s}
+.chip:hover{color:var(--text);border-color:var(--cyan)}
+.chip[aria-pressed=true]{background:rgba(34,228,240,.14);border-color:var(--cyan);color:var(--cyan)}
+.grid{display:grid;gap:1.2rem}
+.post{padding:1.6rem;text-align:left;cursor:pointer;color:inherit;font:inherit;display:flex;flex-direction:column;gap:.8rem;width:100%}
+.post h3{font-size:1.2rem}
+.post p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.meta{display:flex;justify-content:space-between;gap:1rem;font-size:.8rem;color:var(--cyan);font-family:var(--mono)}
+.meta span:last-child{color:var(--muted)}
+.read{display:inline-flex;align-items:center;gap:.4rem;color:var(--text);font-size:.9rem;font-weight:600}
+.empty{padding:2.5rem 1.5rem;text-align:center;color:var(--muted)}
+.empty strong{display:block;color:var(--text);font-family:var(--head);font-size:1.1rem;margin-bottom:.4rem}
+.note{font-size:.82rem;color:var(--muted);margin-top:1.2rem}
+@media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}.tools{grid-template-columns:1fr auto;align-items:center}.search{min-width:300px}}
+/* modal */
+.ov{position:fixed;inset:0;z-index:60;background:rgba(2,5,10,.82);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:1rem;overscroll-behavior:contain}
+.ov.show{display:flex;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.dlg{width:min(720px,100%);max-height:calc(100dvh - 2rem);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#0a1326;border:1px solid var(--line);border-radius:20px;padding:2rem 1.5rem 2.2rem;position:relative;box-shadow:0 0 80px rgba(34,228,240,.12)}
+.dlg h2{font-size:clamp(1.5rem,4vw,2.1rem);margin:.8rem 2.5rem 1.2rem 0}
+.dlg h3{font-size:1.1rem;margin:1.6rem 0 .5rem;color:var(--cyan)}
+.dlg p{color:#c3d0e4;margin:.6rem 0}
+.x{position:absolute;top:.9rem;right:.9rem;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer}
+.x:hover{border-color:var(--cyan)}
+.tag{font-size:.78rem;padding:.2rem .6rem;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-family:var(--mono)}
+/* projects */
+.proj{overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.proj:hover{transform:translateY(-4px);border-color:rgba(34,228,240,.5);box-shadow:0 0 36px rgba(34,228,240,.1)}
+.vis{height:160px;background:linear-gradient(160deg,#0b1730,#08101f);border-bottom:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.vis svg{width:100%;height:100%}
+.pb{padding:1.4rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
+.pb h3{font-size:1.15rem}.pb p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.badge{font-size:.72rem;color:var(--violet);font-family:var(--mono)}
+.plink{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.9rem;color:var(--cyan)}
+.plink[aria-disabled=true]{color:var(--muted);cursor:not-allowed}
+@media(min-width:760px){.proj-grid{grid-template-columns:repeat(3,1fr)}}
+/* connect */
+.cta{padding:2.4rem 1.5rem;text-align:center;display:grid;gap:1.3rem;justify-items:center;background:linear-gradient(160deg,rgba(34,228,240,.08),rgba(124,108,255,.1)),var(--panel)}
+.cta h2{font-size:clamp(1.9rem,5vw,3rem)}
+form{width:min(520px,100%);display:grid;gap:.7rem;text-align:left}
+.row{display:flex;flex-direction:column;gap:.6rem}
+@media(min-width:560px){.row{flex-direction:row}.row .btn{white-space:nowrap}}
+input[aria-invalid=true]{border-color:#ff6b81}
+.status{min-height:1.5rem;font-size:.9rem;display:flex;gap:.5rem;align-items:center}
+.status.err{color:#ff8a9b}.status.ok{color:#5df0c8}
+.chk{display:none;width:44px;height:44px}
+.status.ok .chk{display:block}
+.chk circle,.chk path{fill:none;stroke:#5df0c8;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:140;stroke-dashoffset:140;animation:draw .7s .05s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fine{font-size:.78rem;color:var(--muted);margin:0}
+/* footer */
+footer{border-top:1px solid var(--line);padding:3rem 0 2rem;background:rgba(5,8,15,.6)}
+.fgrid{display:grid;gap:1.8rem}
+.fgrid p{color:var(--muted);margin:.6rem 0 0;font-size:.92rem}
+.fl{display:flex;flex-wrap:wrap;gap:1.2rem;color:var(--muted);font-size:.92rem}
+.fl a:hover{color:var(--cyan)}
+.copy{margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;color:var(--muted);font-size:.82rem}
+@media(min-width:760px){.fgrid{grid-template-columns:1.4fr 1fr 1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+<symbol id="i-x-logo" viewBox="0 0 24 24"><path d="M4 4h4.5l11.5 16h-4.5zM19.5 4 13 11M4.5 20l6.5-7"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#home" class="logo" aria-label="@wazamood home"><b>w</b>wazamood</a>
+    <nav class="links" aria-label="Primary">
+      <a class="l" href="#home">Home</a><a class="l" href="#about">About</a><a class="l" href="#blog">Blog</a><a class="l" href="#projects">Projects</a><a class="l" href="#contact">Contact</a>
+      <a class="btn pri sm" href="https://x.com/wazamood" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-x-logo"/></svg>Follow on X</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile"><svg class="i"><use href="#i-menu"/></svg></button>
+  </div>
+  <nav class="mobile" id="mobile" aria-label="Mobile">
+    <a class="l" href="#home">Home</a><a class="l" href="#about">About</a><a class="l" href="#blog">Blog</a><a class="l" href="#projects">Projects</a><a class="l" href="#contact">Contact</a>
+    <a class="btn pri" href="https://x.com/wazamood" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-x-logo"/></svg>Follow on X</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <h1><span>Work Smart.</span><span>Think Global.</span><span class="g">Build the Future.</span></h1>
+      <p>Exploring the intersection of software engineering, ICT innovation, technology strategy, and digital freedom to build solutions that move the world forward.</p>
+      <div class="ctas">
+        <a class="btn pri" href="#blog">Explore My Blog<svg class="i"><use href="#i-arrow"/></svg></a>
+        <a class="btn" href="https://x.com/wazamood" target="_blank" rel="noopener noreferrer">Follow wazamood on X<svg class="i"><use href="#i-ext"/></svg></a>
+      </div>
+    </div>
+    <div class="term glass" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i><em>wazamood.js</em></div>
+      <pre id="code"></pre>
+    </div>
+  </div>
+</section>
+
+<section id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="about">
+      <div class="head">
+        <h2 id="about-h">Hi, I’m Wazamood.</h2>
+        <p class="sub">I’m a writer, software engineering student, and technology enthusiast passionate about ICT, software development, digital innovation, and global solutions. I’m exploring how technology and strategic thinking can empower people, solve real-world problems, and create greater opportunities.</p>
+      </div>
+      <div class="mission glass"><h3>Mission</h3><p>To learn continuously, build useful technology, share valuable ideas, and connect with people who believe in using innovation to create a better future.</p></div>
+    </div>
+    <div class="cards3">
+      <article class="card glass"><div class="ico"><svg class="i"><use href="#i-code"/></svg></div><h3>Software &amp; Engineering</h3><p>Exploring programming, software architecture, web development, and practical digital solutions.</p></article>
+      <article class="card glass"><div class="ico"><svg class="i"><use href="#i-globe"/></svg></div><h3>ICT &amp; Innovation</h3><p>Discovering how information and communication technologies can transform businesses, communities, and everyday life.</p></article>
+      <article class="card glass"><div class="ico"><svg class="i"><use href="#i-users"/></svg></div><h3>Global Ideas &amp; Community</h3><p>Sharing insights, exchanging ideas, and connecting with ambitious people across the world.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="blog" aria-labelledby="blog-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="blog-h">Ideas for a Digital Future</h2>
+      <p class="sub">Insights, lessons, and perspectives on software engineering, ICT innovation, technology strategy, and the future of digital life.</p>
+    </div>
+    <div class="tools">
+      <div class="search"><svg class="i"><use href="#i-search"/></svg><label class="sr" for="q">Search articles</label><input type="search" id="q" placeholder="Search articles" autocomplete="off"></div>
+      <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+    </div>
+    <p class="sr" id="count" role="status" aria-live="polite"></p>
+    <div class="grid" id="posts"></div>
+    <div class="empty glass" id="empty" hidden><strong>No articles match your search</strong>Try a different keyword, or switch the category back to All.</div>
+    <p class="note">These four articles are sample editorial content written to show how the blog will look. They are not previously published pieces.</p>
+  </div>
+</section>
+
+<section id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="proj-h">Building Ideas Into Solutions</h2>
+      <p class="sub">A growing collection of software experiments, digital tools, and technology-driven ideas.</p>
+    </div>
+    <div class="grid proj-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="cta glass">
+      <h2 id="contact-h">Let’s Build the Future Together.</h2>
+      <p class="sub">Have an idea, a technology project, or a perspective worth sharing? Let’s connect, exchange knowledge, and explore what we can build together.</p>
+      <a class="btn pri" href="https://x.com/wazamood" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-x-logo"/></svg>Follow @wazamood on X</a>
+      <form id="news" novalidate>
+        <label for="email"><strong>Get technology updates</strong></label>
+        <div class="row"><input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" aria-describedby="status"><button class="btn pri" type="submit" id="sub">Subscribe</button></div>
+        <div class="status" id="status" role="status" aria-live="polite"><svg class="chk" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="m15 25 6 6 12-13"/></svg><span id="msg"></span></div>
+        <p class="fine">Demo form: no mailing list is connected yet, so addresses are validated in your browser and never saved or sent. Real subscriptions need a backend or mailing-list service.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a href="#home" class="logo"><b>w</b>wazamood</a><p>Work smart, think global, build the future.</p></div>
+      <nav class="fl" aria-label="Footer"><a href="#home">Home</a><a href="#about">About</a><a href="#blog">Blog</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+      <div><a class="btn sm" href="https://x.com/wazamood" target="_blank" rel="noopener noreferrer" aria-label="@wazamood on X (opens in a new tab)"><svg class="i"><use href="#i-x-logo"/></svg>x.com/wazamood</a></div>
+    </div>
+    <div class="copy"><span>© <span id="year">2026</span> Wazamood. All rights reserved.</span><span>Built with curiosity and code</span></div>
+  </div>
+</footer>
+
+<div class="ov" id="ov" aria-hidden="true">
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="m-title" tabindex="-1" id="dlg">
+    <button class="x" id="mx" aria-label="Close article"><svg class="i"><use href="#i-x"/></svg></button>
+    <div class="meta" id="m-meta"></div>
+    <h2 id="m-title"></h2>
+    <div id="m-body"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+  const icon = (id) => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('class', 'i'); s.setAttribute('aria-hidden', 'true'); const u = document.createElementNS('http://www.w3.org/2000/svg', 'use'); u.setAttribute('href', '#' + id); s.appendChild(u); return s; };
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Data ---------- */
+  const POSTS = [
+    { id: 'mindset', cat: 'Software Engineering', time: 6, title: 'The Software Engineering Mindset: Building Beyond Code',
+      summary: 'Great engineers are defined less by syntax than by how they frame problems, weigh trade-offs, and keep learning.',
+      body: ['Writing code is only one part of software engineering. The deeper skill is deciding what is worth building, and how to build it so that other people can understand, trust, and change it later.',
+        '## Start with the problem',
+        'Before opening an editor, ask who the software is for and what changes for them if it works. A clear problem statement removes whole categories of unnecessary features and keeps a project from drifting.',
+        '## Think in trade-offs',
+        'Every design choice costs something: speed against clarity, flexibility against simplicity. Strong engineers name the trade-off out loud, pick deliberately, and write down why. That habit turns future debugging into reading rather than guessing.',
+        '## Treat learning as part of the job',
+        'Tools change quickly, but fundamentals such as data structures, testing, version control, and clear communication stay useful. Building small projects, reading other people’s code, and explaining ideas in writing all compound over time.'] },
+    { id: 'ict', cat: 'ICT & Innovation', time: 5, title: 'How ICT Is Connecting Local Ideas to Global Opportunities',
+      summary: 'Connectivity, cloud tools, and open knowledge mean a good idea no longer has to stay in the place it started.',
+      body: ['Information and communication technology has changed the distance between an idea and its audience. A student, a small shop, or a community group can now reach people in other countries with tools that were once available only to large organisations.',
+        '## Lower barriers to entry',
+        'Mobile networks, cloud hosting, and free learning resources reduce the cost of starting. Someone with a laptop and a clear goal can publish, prototype, and test an idea quickly.',
+        '## Local context is an advantage',
+        'The most useful solutions often come from people who deeply understand a local problem. ICT lets them adapt proven approaches to their own setting and then share what they learn with others facing similar challenges.',
+        '## Connection still needs intention',
+        'Access alone does not create opportunity. Reliable infrastructure, digital skills, and trusted communities matter just as much, and they are worth investing in alongside the technology itself.'] },
+    { id: 'smart', cat: 'Tech Strategy', time: 5, title: 'Work Smart: Using Technology to Multiply Your Impact',
+      summary: 'Working smart means choosing the few tools and habits that give your effort leverage, not adding more apps.',
+      body: ['Working smart is not about doing less. It is about directing effort where it produces the most value and letting technology handle the repetitive parts.',
+        '## Find the repeated work',
+        'Notice which tasks you do again and again: formatting notes, answering the same questions, moving data between places. These are the best candidates for templates, scripts, or simple automation.',
+        '## Keep the toolset small',
+        'A smaller set of tools that you know well usually beats a long list you barely use. Choose tools that fit together, and review them regularly to remove what no longer earns its place.',
+        '## Protect time for deep work',
+        'Leverage also comes from focus. Schedule uninterrupted time for the work that needs real thinking, and use technology to reduce the noise around it rather than add to it.'] },
+    { id: 'freedom', cat: 'Tech Strategy', time: 6, title: 'Digital Freedom: Building Skills for a Borderless Future',
+      summary: 'Digital freedom grows from skills you can carry anywhere: learning fast, building things, and communicating clearly.',
+      body: ['When work, learning, and communities increasingly live online, the skills you hold become a form of freedom. They let you adapt, contribute, and create value across borders and industries.',
+        '## Skills that travel',
+        'Programming, clear writing, data literacy, and problem solving apply in almost every field. Developing a few of them well gives you options that do not depend on one employer or one location.',
+        '## Build in public, carefully',
+        'Sharing what you make and learn helps others and creates a record of your growth. Do it thoughtfully: credit sources, be honest about what you do not yet know, and protect your privacy.',
+        '## Pair strategy with action',
+        'Strategy decides direction and technology provides leverage, but progress comes from shipping small things consistently. Pick a direction, build something this week, and learn from the result.'] }
+  ];
+  const CATS = ['All', 'Software Engineering', 'Tech Strategy', 'ICT & Innovation'];
+
+  /* Add a real link later by setting `url` (e.g. url: 'https://github.com/you/repo'). */
+  const PROJECTS = [
+    { title: 'Personal Portfolio Website', kind: 'site', status: 'Live on this page',
+      desc: 'A responsive digital home for showcasing ideas, projects, and technical interests.',
+      tags: ['HTML', 'CSS', 'JavaScript'], url: '#home', label: 'View Project' },
+    { title: 'Smart Blog & Knowledge Hub', kind: 'hub', status: 'Concept',
+      desc: 'A concept for organizing technology articles, learning resources, and practical insights.',
+      tags: ['React', 'Python', 'Cloud'], url: null, label: 'Explore Concept' },
+    { title: 'ICT Innovation Dashboard', kind: 'dash', status: 'Concept',
+      desc: 'A concept interface for presenting technology insights, digital trends, and useful information in one place.',
+      tags: ['JavaScript', 'Python', 'Cloud'], url: null, label: 'Explore Concept' }
+  ];
+  const VISUALS = {
+    site: '<svg viewBox="0 0 300 160" aria-hidden="true"><rect x="40" y="24" width="220" height="112" rx="10" fill="#0d1b36" stroke="#22e4f0" stroke-opacity=".5"/><rect x="40" y="24" width="220" height="16" rx="10" fill="#142a52"/><rect x="56" y="54" width="90" height="10" rx="5" fill="#22e4f0"/><rect x="56" y="72" width="130" height="6" rx="3" fill="#3a5078"/><rect x="56" y="84" width="110" height="6" rx="3" fill="#3a5078"/><rect x="56" y="104" width="40" height="14" rx="7" fill="#7c6cff"/><circle cx="214" cy="88" r="26" fill="none" stroke="#22e4f0" stroke-opacity=".6"/><circle cx="214" cy="88" r="12" fill="#22e4f0" fill-opacity=".25"/></svg>',
+    hub: '<svg viewBox="0 0 300 160" aria-hidden="true"><g stroke="#3a5078"><path d="M150 80 70 40M150 80l80-40M150 80 70 124M150 80l80 44"/></g><circle cx="150" cy="80" r="20" fill="#22e4f0" fill-opacity=".25" stroke="#22e4f0"/><g fill="#0d1b36" stroke="#7c6cff"><rect x="44" y="26" width="52" height="28" rx="6"/><rect x="204" y="26" width="52" height="28" rx="6"/><rect x="44" y="110" width="52" height="28" rx="6"/><rect x="204" y="110" width="52" height="28" rx="6"/></g></svg>',
+    dash: '<svg viewBox="0 0 300 160" aria-hidden="true"><rect x="30" y="20" width="240" height="120" rx="10" fill="#0d1b36" stroke="#22e4f0" stroke-opacity=".4"/><g fill="#22e4f0"><rect x="52" y="88" width="16" height="36" rx="3" opacity=".5"/><rect x="78" y="70" width="16" height="54" rx="3" opacity=".7"/><rect x="104" y="96" width="16" height="28" rx="3" opacity=".5"/><rect x="130" y="56" width="16" height="68" rx="3"/></g><path d="M170 100l24-24 20 12 36-40" fill="none" stroke="#7c6cff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="52" y="34" width="70" height="8" rx="4" fill="#3a5078"/></svg>'
+  };
+
+  /* ---------- Nav ---------- */
+  const burger = $('#burger'), mobile = $('#mobile');
+  const setMenu = (open) => {
+    mobile.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    burger.replaceChildren(icon(open ? 'i-x' : 'i-menu'));
+  };
+  burger.addEventListener('click', () => setMenu(!mobile.classList.contains('open')));
+  mobile.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobile.classList.contains('open')) { setMenu(false); burger.focus(); } });
+  matchMedia('(min-width:820px)').addEventListener('change', (m) => { if (m.matches) setMenu(false); });
+
+  /* ---------- Hero terminal ---------- */
+  const CODE = [
+    ['c', '// strategy + tech = freedom'],
+    ['k', 'const ', '', 'wazamood', 'k', ' = {'],
+    ['', '  mindset: ', 's', '"work smart"', '', ','],
+    ['', '  scope:   ', 's', '"think global"', '', ','],
+    ['', '  focus:   [', 's', '"software"', '', ', ', 's', '"ICT"', '', ', ', 's', '"strategy"', '', '],'],
+    ['', '  goal:    ', 's', '"build the future"', '', ''],
+    ['', '};']
+  ];
+  const codeEl = $('#code');
+  const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const lineHTML = (parts) => { if (parts[0] === 'c') return '<span class="c">' + esc(parts[1]) + '</span>'; let h = ''; for (let i = 0; i < parts.length; i += 2) { const cls = parts[i], txt = parts[i + 1]; h += cls ? '<span class="' + cls + '">' + esc(txt) + '</span>' : esc(txt); } return h; };
+  const plain = (parts) => parts[0] === 'c' ? parts[1] : parts.filter((_, i) => i % 2 === 1).join('');
+  const full = CODE.map(lineHTML).join('\n');
+  if (reduce) { codeEl.innerHTML = full; }
+  else {
+    let li = 0, ci = 0, done = '';
+    const tick = () => {
+      if (li >= CODE.length) { codeEl.innerHTML = full + '\n<span class="cur"></span>'; return; }
+      const target = plain(CODE[li]);
+      ci++;
+      const partial = esc(target.slice(0, ci));
+      codeEl.innerHTML = done + (li === 0 ? '<span class="c">' + partial + '</span>' : partial) + '<span class="cur"></span>';
+      if (ci >= target.length) { done += lineHTML(CODE[li]) + '\n'; li++; ci = 0; setTimeout(tick, 160); } else setTimeout(tick, 24);
+    };
+    setTimeout(tick, 500);
+  }
+
+  /* ---------- Blog ---------- */
+  const state = { cat: 'All', q: '' };
+  const chips = $('#chips'), grid = $('#posts'), empty = $('#empty'), count = $('#count');
+  CATS.forEach((c) => { const b = el('button', 'chip', c); b.type = 'button'; b.dataset.cat = c; b.setAttribute('aria-pressed', String(c === 'All')); chips.appendChild(b); });
+  chips.addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    state.cat = b.dataset.cat;
+    chips.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    renderPosts();
+  });
+  $('#q').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); renderPosts(); });
+  const matches = (p) => (state.cat === 'All' || p.cat === state.cat) && (!state.q || (p.title + ' ' + p.summary + ' ' + p.cat).toLowerCase().includes(state.q));
+  function renderPosts() {
+    const list = POSTS.filter(matches);
+    grid.replaceChildren(...list.map((p) => {
+      const b = el('button', 'post glass'); b.type = 'button'; b.dataset.id = p.id;
+      const meta = el('div', 'meta'); meta.append(el('span', '', p.cat), el('span', '', p.time + ' min read'));
+      const r = el('span', 'read', 'Read article'); r.appendChild(icon('i-arrow'));
+      b.append(meta, el('h3', '', p.title), el('p', '', p.summary), r);
+      return b;
+    }));
+    empty.hidden = list.length > 0;
+    count.textContent = list.length + (list.length === 1 ? ' article shown' : ' articles shown');
+  }
+  grid.addEventListener('click', (e) => { const b = e.target.closest('.post'); if (b) openPost(b.dataset.id, b); });
+
+  /* ---------- Modal ---------- */
+  const ov = $('#ov'), dlg = $('#dlg'); let lastFocus = null;
+  function openPost(id, trigger) {
+    const p = POSTS.find((x) => x.id === id); if (!p) return;
+    lastFocus = trigger || document.activeElement;
+    const meta = $('#m-meta'); meta.replaceChildren(el('span', '', p.cat), el('span', '', p.time + ' min read'));
+    $('#m-title').textContent = p.title;
+    const body = $('#m-body'); body.replaceChildren(el('p', 'tag', 'Sample editorial content'));
+    p.body.forEach((t) => body.appendChild(t.startsWith('## ') ? el('h3', '', t.slice(3)) : el('p', '', t)));
+    ov.classList.add('show'); ov.setAttribute('aria-hidden', 'false'); document.body.classList.add('lock');
+    dlg.scrollTop = 0; dlg.focus();
+  }
+  function closePost() {
+    if (!ov.classList.contains('show')) return;
+    ov.classList.remove('show'); ov.setAttribute('aria-hidden', 'true'); document.body.classList.remove('lock');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('#mx').addEventListener('click', closePost);
+  ov.addEventListener('click', (e) => { if (e.target === ov) closePost(); });
+  document.addEventListener('keydown', (e) => {
+    if (!ov.classList.contains('show')) return;
+    if (e.key === 'Escape') { e.preventDefault(); closePost(); return; }
+    if (e.key === 'Tab') {
+      const f = [...dlg.querySelectorAll('button,[href],input,[tabindex]:not([tabindex="-1"])')];
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && (document.activeElement === first || document.activeElement === dlg)) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ---------- Projects ---------- */
+  const pg = $('#projects-grid');
+  PROJECTS.forEach((p) => {
+    const card = el('article', 'proj glass');
+    const vis = el('div', 'vis'); vis.innerHTML = VISUALS[p.kind];
+    const pb = el('div', 'pb');
+    const tags = el('div', 'tags'); p.tags.forEach((t) => tags.appendChild(el('span', 'tag', t)));
+    const link = el('a', 'plink', p.label);
+    if (p.url) { link.href = p.url; if (/^https?:/.test(p.url)) { link.target = '_blank'; link.rel = 'noopener noreferrer'; } link.appendChild(icon('i-arrow')); }
+    else { link.setAttribute('role', 'link'); link.setAttribute('aria-disabled', 'true'); link.textContent = p.label + ' (link coming soon)'; }
+    pb.append(el('span', 'badge', p.status), el('h3', '', p.title), el('p', '', p.desc), tags, link);
+    card.append(vis, pb); pg.appendChild(card);
+  });
+
+  /* ---------- Newsletter (client-side demo only) ---------- */
+  const form = $('#news'), email = $('#email'), status = $('#status'), msg = $('#msg'), sub = $('#sub');
+  const say = (text, cls) => { status.className = 'status' + (cls ? ' ' + cls : ''); msg.textContent = text; };
+  const valid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = email.value.trim();
+    if (!v) { email.setAttribute('aria-invalid', 'true'); say('Enter your email address to continue.', 'err'); email.focus(); return; }
+    if (!valid(v)) { email.setAttribute('aria-invalid', 'true'); say('That email looks incomplete. Use a format like name@example.com.', 'err'); email.focus(); return; }
+    email.removeAttribute('aria-invalid'); sub.disabled = true; sub.textContent = 'Checking…'; say('Checking your address…');
+    setTimeout(() => {
+      sub.disabled = false; sub.textContent = 'Subscribe';
+      say('Your email format is valid. This is a demo: nothing was saved or sent because no mailing list is connected yet.', 'ok');
+      form.reset();
+    }, 900);
+  });
+  email.addEventListener('input', () => { if (email.hasAttribute('aria-invalid')) { email.removeAttribute('aria-invalid'); say(''); } });
+
+  /* ---------- Init ---------- */
+  $('#year').textContent = new Date().getFullYear();
+  renderPosts();
+})();
+</script>
+</body>
+</html>
